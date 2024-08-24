@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
-import { postReq, removeAuthCookie } from '@/utils/apiHandlers';
+import { removeAuthCookie } from '@/utils/apiHandlers';
 import toast from 'react-hot-toast';
 import { MenuDropdown } from '@/components';
 import { reactIcons } from '@/utils/icons';
@@ -20,22 +20,9 @@ const AdminDashboard = () => {
   ];
 
   const handleLogout = async () => {
-    try {
-      const res = await postReq('/auth/logout');
-      const { status } = res;
-      if (status) {
-        removeAuthCookie();
-        navigate('/login');
-        toast.success('Log out successfully');
-      } else if (!status) {
-        removeAuthCookie();
-        navigate('/login');
-        toast.success('Log out successfully');
-      }
-    } catch (error) {
-      toast.error(error);
-      console.log(error, 'error in handle logout');
-    }
+    removeAuthCookie();
+    navigate('/login');
+    toast.success('Log out successfully');
   };
 
   return (

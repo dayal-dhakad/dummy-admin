@@ -34,7 +34,7 @@ const UserDetails = () => {
       }
 
       console.log(form);
-      const res = await postReq(`/admin/user-meta/${id}`, form);
+      const res = await postReq(`/user/admin/user-meta/${id}`, form);
       const { status, error, data } = res;
 
       if (status) {
@@ -619,7 +619,7 @@ const UserDetails = () => {
               <button
                 type="submit"
                 onClick={handleSubmit}
-                className={`text-white font-medium py-2  px-10 rounded-md text-14 bg-primary-1200 font-comfortaa  flex items-center gap-3 ${
+                className={`text-white font-medium py-2 mb-10  px-10 rounded-md text-14 bg-primary-1200 font-comfortaa  flex items-center gap-3 ${
                   isLoading && 'opacity-50'
                 }`}
                 disabled={isLoading}
