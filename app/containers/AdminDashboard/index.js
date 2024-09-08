@@ -45,8 +45,8 @@ const AdminDashboard = () => {
             </button> */}
             <div className="flex items-center justify-center border-b border-[#CFCFCF] pb-10 pt-5">
               <img
-                src="/images/logoVista.png"
-                className="w-[110px] mx-auto"
+                src="/images/vistaImg.png"
+                className="w-[150px] mx-auto"
                 alt=""
               />
             </div>

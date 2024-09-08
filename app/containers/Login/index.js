@@ -62,17 +62,17 @@ const Login = () => {
 
   return (
     <main className=" relative h-screen flex items-center lg:justify-center flex-col text-black overflow-hidden">
-      <div className="hidden lg:block absolute z-10 top-7 left-7  w-[150px]">
+      <div className="hidden lg:block absolute z-10 top-7 left-7  w-[200px]">
         <img
           className="h-full w-full object-cover"
-          src="/images/logoVista.png"
+          src="/images/vistaImg.png"
           alt="logo"
         />
       </div>
-      <div className=" flex  justify-center lg:hidden my-5  w-[150px]">
+      <div className=" flex  justify-center lg:hidden my-5  w-[200px]">
         <img
           className="h-full w-full object-cover"
-          src="/images/logoVista.png"
+          src="/images/vistaImg.png"
           alt="logo"
         />
       </div>
