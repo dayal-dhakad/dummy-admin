@@ -99,25 +99,6 @@ const UserDetails = () => {
           <form className="w-full">
             <div className="flex flex-col md:grid grid-cols-2 md:gap-x-5">
               <div className="input-div w-full">
-                <label className="input-label" htmlFor="employeeId">
-                  Employee Id
-                </label>
-                <input
-                  className="input-box"
-                  type="text"
-                  value={form?.employeeId}
-                  id="employeeId"
-                  placeholder="Enter Employee Id "
-                  name="employeeId"
-                  onChange={handleChange}
-                />
-                <div className="error">
-                  {formError.employeeId && (
-                    <div className="form-eror">{formError.employeeId}</div>
-                  )}
-                </div>
-              </div>
-              <div className="input-div w-full">
                 <label className="input-label" htmlFor="businessName">
                   Business Name
                 </label>
@@ -349,6 +330,65 @@ const UserDetails = () => {
                 <div className="error">
                   {formError.sourcesPlatform && (
                     <div className="form-eror">{formError.sourcesPlatform}</div>
+                  )}
+                </div>
+              </div>
+              <div className="input-div w-full">
+                <label className="input-label" htmlFor="employeeId">
+                  Employee Id
+                </label>
+                <input
+                  className="input-box"
+                  type="text"
+                  id="employeeId"
+                  placeholder="Enter Employee Id "
+                  name="employeeId"
+                  onChange={handleChange}
+                  value={form?.employeeId}
+                />
+                <div className="error">
+                  {formError.employeeId && (
+                    <div className="form-eror">{formError.employeeId}</div>
+                  )}
+                </div>
+              </div>
+              <div className="input-div w-full">
+                <label className="input-label" htmlFor="employeeName">
+                  Employee Name
+                </label>
+                <input
+                  className="input-box"
+                  type="text"
+                  id="employeeName"
+                  placeholder="Enter Employee Name "
+                  name="employeeName"
+                  onChange={handleChange}
+                  value={form?.employeeName}
+                />
+                <div className="error">
+                  {formError.employeeName && (
+                    <div className="form-eror">{formError.employeeName}</div>
+                  )}
+                </div>
+              </div>
+              <div className="input-div w-full">
+                <label className="input-label" htmlFor="employeeMobileNumber">
+                  Employee Mobile Number
+                </label>
+                <input
+                  className="input-box"
+                  type="text"
+                  id="employeeMobileNumber"
+                  placeholder="Enter Employee Mobile Number "
+                  name="employeeMobileNumber"
+                  onChange={handleChange}
+                  value={form?.employeeMobileNumber}
+                />
+                <div className="error">
+                  {formError.employeeMobileNumber && (
+                    <div className="form-eror">
+                      {formError.employeeMobileNumber}
+                    </div>
                   )}
                 </div>
               </div>
