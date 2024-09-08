@@ -8,14 +8,13 @@ import { isYupError, parseYupError } from '@/utils/Yup';
 
 const Login = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [form, setForm] = useState({});
+  const [form, setForm] = useState({ type: 'admin' });
   const [formError, setFormError] = useState({});
   const [setLock, isSetLock] = useState();
   const navigate = useNavigate();
   const lockFunction = () => {
     isSetLock(!setLock);
   };
-
   // Login API Calling
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -39,7 +38,7 @@ const Login = () => {
 
       const res = await postReq('/auth/login', form);
       const { status, error, data } = res;
-
+      console.log(res);
       if (status) {
         setAuthCookie(data?.token);
         console.log(data, 'dta');
@@ -48,7 +47,7 @@ const Login = () => {
       } else if (error) {
         Array.isArray(error.message)
           ? error?.message.map((msg) => toast.error(msg))
-          : toast.error(error.message);
+          : toast.error(error);
       }
     } catch (error) {
       if (isYupError(error)) {
@@ -85,18 +84,18 @@ const Login = () => {
 
             <div className="py-12 space-y-5">
               <div className="space-y-2">
-                <label htmlFor="email">Your email address</label>
+                <label htmlFor="id">Your email address</label>
                 <input
                   className=" !px-6"
                   type="email"
                   id="email"
                   placeholder="Enter your mail id"
-                  name="email"
+                  name="id"
                   onChange={handleChange}
                 />
                 <div className="error">
-                  {formError.email && (
-                    <div className="form-eror">{formError.email}</div>
+                  {formError.id && (
+                    <div className="form-eror">{formError.id}</div>
                   )}
                 </div>
               </div>

@@ -23,7 +23,7 @@ const CreateUserModal = ({ openModal, closeModal, getUserData }) => {
   const lockFunction = () => {
     isSetLock(!setLock);
   };
-
+  console.log(form);
   // Login API Calling
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -83,34 +83,54 @@ const CreateUserModal = ({ openModal, closeModal, getUserData }) => {
               <div className="w-full py-5 px-4  ">
                 <div className="space-y-5">
                   <div className="space-y-2">
-                    <label htmlFor="email">Email address</label>
+                    <label htmlFor="email">Employee Id</label>
                     <input
                       className="input-box"
                       type="email"
                       id="email"
-                      placeholder="Enter your mail id"
-                      name="email"
+                      placeholder="Enter your employee id"
+                      name="employeeId"
                       onChange={handleChange}
                     />
                     <div className="error">
-                      {formError.email && (
-                        <div className="form-eror">{formError.email}</div>
+                      {formError.employeeId && (
+                        <div className="form-eror">{formError.employeeId}</div>
                       )}
                     </div>
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="username">Username</label>
+                    <label htmlFor="username">Employee Name</label>
                     <input
                       className="input-box"
                       type="text"
                       id="username"
-                      placeholder="Enter your username"
-                      name="username"
+                      placeholder="Enter Employee Name"
+                      name="employeeName"
                       onChange={handleChange}
                     />
                     <div className="error">
-                      {formError.username && (
-                        <div className="form-eror">{formError.username}</div>
+                      {formError.employeeName && (
+                        <div className="form-eror">
+                          {formError.employeeName}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <label htmlFor="number">Employee Mobile Number</label>
+                    <input
+                      className="input-box"
+                      type="text"
+                      id="number"
+                      placeholder="Enter Employee Mobile Number"
+                      name="employeeMobileNumber"
+                      onChange={handleChange}
+                    />
+                    <div className="error">
+                      {formError.employeeMobileNumber && (
+                        <div className="form-eror">
+                          {formError.employeeMobileNumber}
+                        </div>
                       )}
                     </div>
                   </div>

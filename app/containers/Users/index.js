@@ -77,9 +77,9 @@ const Users = () => {
                   <thead className="rounded-t-xl text-16 font-medium  bg-[#ABD5FFA1]">
                     <tr className=" h-[45px]">
                       <th>S. No.</th>
-                      <th className="">User Name</th>
-                      <th>Email</th>
-                      {/* <th className=" text-center">Action</th> */}
+                      <th className="">Employee Id</th>
+                      <th className="">Employee Name</th>
+                      <th className="truncate">Employee Mobile Number</th>
                     </tr>
                   </thead>
                   <tbody className="rounded-b-xl">
@@ -92,8 +92,11 @@ const Users = () => {
                           className="font-poppins cursor-pointer text-14 text-black  h-[45px] hover:bg-[#ABD5FF42]"
                         >
                           <td>#{serial}</td>
-                          <td className="">{item.username}</td>
-                          <td className="pr-5 break-all">{item.email}</td>
+                          <td className="">{item.employeeId}</td>
+                          <td className="">{item.employeeName}</td>
+                          <td className="pr-5 break-all">
+                            {item.employeeMobileNumber}
+                          </td>
                         </tr>
                       );
                     })}
